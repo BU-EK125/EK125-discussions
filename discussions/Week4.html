@@ -1,0 +1,1137 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Discussion Week 4 Modules - Loops - Nested Loops &#8212; EK125 Discussion Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'discussions/Week4';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ENG EK 125 – Exam 1 Review" href="Week5.html" />
+    <link rel="prev" title="Week 3 Discussion: Booleans and Selection Statements" href="Week3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">EK125 Discussion Notebooks</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    EK125 Discussion Notebooks
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Week2.html">Discussion Week 2: Sequences, Strings, and Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Week3.html"><strong>Week 3 Discussion: Booleans and Selection Statements</strong></a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Discussion Week 4 Modules - Loops - Nested Loops</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Week5.html">ENG EK 125 – Exam 1 Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Week9.html">ENG EK 125 – Quiz Review (Classes 14 &amp; 15)</a></li>
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/BU-EK125/EK125-discussions/blob/main/discussions/Week4.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/discussions/Week4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Discussion Week 4 Modules - Loops - Nested Loops</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Discussion Week 4 Modules - Loops - Nested Loops</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#class-5-importing-modules-and-basic-loops">Class 5: Importing Modules and Basic Loops</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-importing-modules">Part 1: Importing Modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-module">What is a Module?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-import-basic-syntax">How to Import: Basic Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-import-the-entire-module">Method 2: Import the Entire Module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-import-with-an-alias-nickname">Method 3: Import with an Alias (Nickname)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-module">The random Module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-math-module">The math Module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-for-loops">Part 2: For Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-using-range">Loops using <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-sequences">Looping through sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-running-sums">Calculating Running Sums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-loops-with-random-numbers">Combining Loops with Random Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-conditional-loops-while">Part 3: Conditional Loops (While)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-checking">Error Checking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-in-a-while-loop">Counting in a while loop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-loops">Nested Loops</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Nested loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-the-inner-loop">Varying the Inner Loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-if-inside-a-loop">Using if Inside a Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness-and-reproducibility">Randomness and Reproducibility</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="discussion-week-4-modules-loops-nested-loops">
+<h1>Discussion Week 4 Modules - Loops - Nested Loops<a class="headerlink" href="#discussion-week-4-modules-loops-nested-loops" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="class-5-importing-modules-and-basic-loops">
+<h1>Class 5: Importing Modules and Basic Loops<a class="headerlink" href="#class-5-importing-modules-and-basic-loops" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Importing modules</strong> - accessing additional functions and capabilities beyond basic Python</p></li>
+<li><p><strong>Loops</strong> - repeating code automatically to handle repetitive tasks</p></li>
+</ol>
+<p>These two concepts work together beautifully: loops let you repeat operations, and modules give you interesting operations to repeat! We’ll start with imports so you can use them in today’s practice problems.</p>
+</section>
+<section id="part-1-importing-modules">
+<h2>Part 1: Importing Modules<a class="headerlink" href="#part-1-importing-modules" title="Link to this heading">#</a></h2>
+<section id="what-is-a-module">
+<h3>What is a Module?<a class="headerlink" href="#what-is-a-module" title="Link to this heading">#</a></h3>
+<p>So far, you’ve been using Python’s built-in functions like <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, and <code class="docutils literal notranslate"><span class="pre">type()</span></code>. These are always available. But Python has many more functions organized into modules (also called libraries) that you can access when you need them.</p>
+<p>Think of modules as specialized toolboxes:</p>
+<ul class="simple">
+<li><p><strong>math</strong> - mathematical functions like square root, trigonometry, constants like π</p></li>
+<li><p><strong>random</strong> - generating random numbers and making random choices</p></li>
+<li><p><strong>time</strong> - working with dates, times, and adding delays</p></li>
+<li><p><strong>os</strong> &amp; <strong>sys</strong> - interacting with your operating system and files</p></li>
+</ul>
+</section>
+<section id="how-to-import-basic-syntax">
+<h3>How to Import: Basic Syntax<a class="headerlink" href="#how-to-import-basic-syntax" title="Link to this heading">#</a></h3>
+<p>To use functions from a module, you must first import it.</p>
+<p><strong>Method 1: Import Specific Functions (Recommended for Beginners)</strong>
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_name</span> <span class="pre">import</span> <span class="pre">function_name</span></code>
+This imports just the function(s) you need, and you can use them directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Method 1: Import Specific Functions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Now you can use randint directly</span>
+<span class="n">dice_roll</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You rolled:"</span><span class="p">,</span> <span class="n">dice_roll</span><span class="p">)</span>
+
+<span class="c1"># To import multiple functions from the same module:</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">random</span><span class="p">,</span> <span class="n">choice</span>
+
+<span class="c1"># Now you can use all three functions</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>      <span class="c1"># Random integer from 1 to 10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span>            <span class="c1"># Random float from 0.0 to 1.0</span>
+<span class="n">fruit</span> <span class="o">=</span> <span class="n">choice</span><span class="p">([</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">])</span>  <span class="c1"># Random choice from list</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Num1: </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2">, Num2: </span><span class="si">{</span><span class="n">num2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Fruit: </span><span class="si">{</span><span class="n">fruit</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You rolled: 6
+Num1: 7, Num2: 0.84, Fruit: banana
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="method-2-import-the-entire-module">
+<h3>Method 2: Import the Entire Module<a class="headerlink" href="#method-2-import-the-entire-module" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code>
+This imports the whole module, and you use functions by prefixing them with the module name. This is useful to avoid naming conflicts.</p>
+</section>
+<section id="method-3-import-with-an-alias-nickname">
+<h3>Method 3: Import with an Alias (Nickname)<a class="headerlink" href="#method-3-import-with-an-alias-nickname" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span> <span class="pre">as</span> <span class="pre">nickname</span></code>
+This is common for modules with long names.</p>
+<p><strong>⚠️ Important: Avoid <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">*</span></code></strong>
+This imports everything. It creates a messy namespace and makes debugging harder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Method 2: Import Entire Module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="c1"># Use the module name before each function</span>
+<span class="n">dice_roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">probability</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rolled:"</span><span class="p">,</span> <span class="n">dice_roll</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Probability:"</span><span class="p">,</span> <span class="n">probability</span><span class="p">)</span>
+
+<span class="c1"># Method 3: Import with Alias</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rnd</span>
+
+<span class="n">dice_roll</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rolled with alias:"</span><span class="p">,</span> <span class="n">dice_roll</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rolled: 2
+Probability: 0.4615328957945234
+Rolled with alias: 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-random-module">
+<h2>The random Module<a class="headerlink" href="#the-random-module" title="Link to this heading">#</a></h2>
+<p>Here are the key functions:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">randint(a,</span> <span class="pre">b)</span></code></strong>: Generates a random integer from a to b (<strong>inclusive on both ends</strong>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">random()</span></code></strong>: Generates a random floating-point number from 0.0 (inclusive) to 1.0 (exclusive).</p></li>
+</ul>
+</section>
+<section id="the-math-module">
+<h2>The math Module<a class="headerlink" href="#the-math-module" title="Link to this heading">#</a></h2>
+<p>For more advanced math operations like square roots and Pi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="c1"># --- Random Examples ---</span>
+<span class="c1"># Roll a six-sided die</span>
+<span class="n">roll</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rolled:"</span><span class="p">,</span> <span class="n">roll</span><span class="p">)</span>
+
+<span class="c1"># Random decimal between 0 and 100</span>
+<span class="n">percentage</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Percentage: </span><span class="si">{</span><span class="n">percentage</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+
+<span class="c1"># --- Math Examples ---</span>
+<span class="c1"># Calculate area of a circle</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Area of circle: </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Calculate square root</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Square root of </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rolled: 2
+Percentage: 23.17%
+Area of circle: 78.54
+Square root of 16 is 4.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-2-for-loops">
+<h2>Part 2: For Loops<a class="headerlink" href="#part-2-for-loops" title="Link to this heading">#</a></h2>
+<p>For loops are used to repeat statements a specified number of times or to iterate over a sequence.</p>
+<section id="loops-using-range">
+<h3>Loops using <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#loops-using-range" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> function generates a sequence of numbers from 0 up to (but not including) n.
+Structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">itervar</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">action</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic loop repeating an action 5 times</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Start Loop:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'!'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">OK'</span><span class="p">)</span>
+<span class="sd">'''</span>
+<span class="sd"># Using the iterator variable (i)</span>
+<span class="sd"># Note: range(4) creates 0, 1, 2, 3</span>
+<span class="sd">print("\nPrinting loop variables:")</span>
+<span class="sd">for i in range(4):</span>
+<span class="sd">    print(i)</span>
+<span class="sd">print('OK')</span>
+
+<span class="sd"># Formatted print inside loop</span>
+<span class="sd">print("\nFormatted loop:")</span>
+<span class="sd">for num in range(3):</span>
+<span class="sd">    print(f'{num}: !')</span>
+<span class="sd">'''</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start Loop:
+!!!!!
+OK
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'\n# Using the iterator variable (i)\n# Note: range(4) creates 0, 1, 2, 3\nprint("\nPrinting loop variables:")\nfor i in range(4):\n    print(i)\nprint(\'OK\')\n\n# Formatted print inside loop\nprint("\nFormatted loop:")\nfor num in range(3):\n    print(f\'{num}: !\')\n'
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="looping-through-sequences">
+<h3>Looping through sequences<a class="headerlink" href="#looping-through-sequences" title="Link to this heading">#</a></h3>
+<p>A for loop can be used in Python to iterate through the items in any sequence (like a list or a string), and perform the same action for each one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">'''</span>
+<span class="sd"># Looping through a list of numbers</span>
+<span class="sd">somenums = [4, 33, 11]</span>
+<span class="sd">for n in somenums:</span>
+<span class="sd">    print('The number is', n)</span>
+
+<span class="sd">print("-" * 10)</span>
+
+<span class="sd"># Looping through a mixed list</span>
+<span class="sd">mixedlist = [33, 'hi', False]</span>
+<span class="sd">for m in mixedlist:</span>
+<span class="sd">    print(type(m))</span>
+
+<span class="sd">print("-" * 10)</span>
+<span class="sd">'''</span>
+<span class="c1"># Looping through a string (character by character)</span>
+<span class="n">myword</span> <span class="o">=</span> <span class="s1">'hello'</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">myword</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">' '</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h e l l o 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-running-sums">
+<h3>Calculating Running Sums<a class="headerlink" href="#calculating-running-sums" title="Link to this heading">#</a></h3>
+<p>A useful application of a loop is to calculate a running sum. A running sum typically starts at 0, and then numbers are added to the sum one at a time.</p>
+</section>
+<section id="combining-loops-with-random-numbers">
+<h3>Combining Loops with Random Numbers<a class="headerlink" href="#combining-loops-with-random-numbers" title="Link to this heading">#</a></h3>
+<p>Now that you know about both imports and loops, you can create programs with interesting random behavior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculating a running sum</span>
+<span class="n">runsum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">runsum</span> <span class="o">=</span> <span class="n">runsum</span> <span class="o">+</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The sum of 0 through 5 is'</span><span class="p">,</span> <span class="n">runsum</span><span class="p">)</span>
+
+<span class="c1"># Summing values from a list</span>
+<span class="n">runsum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">11</span><span class="p">]:</span>
+    <span class="n">runsum</span> <span class="o">=</span> <span class="n">runsum</span> <span class="o">+</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The sum of the list is'</span><span class="p">,</span> <span class="n">runsum</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Random Number Loop</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Simulate rolling a die 5 times</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Rolling a die 5 times:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Roll </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">roll</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sum of 0 through 5 is 15
+The sum of the list is 48
+--------------------
+Rolling a die 5 times:
+Roll 1: 3
+Roll 2: 6
+Roll 3: 4
+Roll 4: 2
+Roll 5: 6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-3-conditional-loops-while">
+<h2>Part 3: Conditional Loops (While)<a class="headerlink" href="#part-3-conditional-loops-while" title="Link to this heading">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop repeats the action as long as an expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+Structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">action</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic while loop</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'!'</span><span class="p">)</span>
+
+<span class="sd">'''</span>
+<span class="sd"># While loop with else</span>
+<span class="sd"># The else block runs when the condition becomes False</span>
+<span class="sd">x = 2</span>
+<span class="sd">while x &lt; 5:</span>
+<span class="sd">    x = x + 1</span>
+<span class="sd">    print(x)</span>
+<span class="sd">else:</span>
+<span class="sd">    print('We are done at', x)</span>
+<span class="sd">'''</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+4
+5
+!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>"\n# While loop with else\n# The else block runs when the condition becomes False\nx = 2\nwhile x &lt; 5:\n    x = x + 1\n    print(x)\nelse:\n    print('We are done at', x)\n"
+</pre></div>
+</div>
+</div>
+</div>
+<section id="error-checking">
+<h3>Error Checking<a class="headerlink" href="#error-checking" title="Link to this heading">#</a></h3>
+<p>Error-checking generally involves continuing to prompt the user until a valid value is entered.</p>
+<p><strong>Note:</strong> When running the code below, you will need to type into the input box that appears.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error Checking Example</span>
+<span class="c1"># Try entering a negative number first to see the loop work!</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter a positive number: '</span><span class="p">)</span>
+<span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Seriously! Enter a positive number: '</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for entering'</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter a positive number: -5
+Seriously! Enter a positive number: -11.1
+Seriously! Enter a positive number: 3
+Thanks for entering 3.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="counting-in-a-while-loop">
+<h3>Counting in a while loop<a class="headerlink" href="#counting-in-a-while-loop" title="Link to this heading">#</a></h3>
+<p>It is often useful to count how many times the action ended up being executed. We can use a counter variable initialized before the loop.</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter a positive number: '</span><span class="p">)</span>
+<span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Seriously! Enter a positive number: '</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for entering'</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'It took you'</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="s1">'tries.'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter a positive number: -9
+Seriously! Enter a positive number: 33
+Thanks for entering 33.0
+It took you 2 tries.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nested-loops">
+<h1>Nested Loops<a class="headerlink" href="#nested-loops" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>Nested loops<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>A nested loop is one loop inside of another.</p>
+<ul class="simple">
+<li><p><strong>Outer Loop</strong>: The first loop.</p></li>
+<li><p><strong>Inner Loop</strong>: The loop inside the action of the outer loop.
+The inner loop completes all its iterations for <em>every single iteration</em> of the outer loop.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nested loop iterating over words and then characters</span>
+<span class="n">wordlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s2">"hi"</span><span class="p">,</span> <span class="s1">'ciao'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">myword</span> <span class="ow">in</span> <span class="n">wordlist</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">myword</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">' '</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span> <span class="c1"># Newline after each word</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"That's it!"</span><span class="p">)</span>
+<span class="sd">'''</span>
+<span class="sd">print("-" * 20)</span>
+
+<span class="sd"># Nested loop with range (Creating a rectangle of stars)</span>
+<span class="sd">for num in range(3):</span>
+<span class="sd">    print(f'{num}:', end=' ')</span>
+<span class="sd">    for n in range(5):</span>
+<span class="sd">        print('*', end='')</span>
+<span class="sd">    print()</span>
+<span class="sd">'''</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h e l l o 
+h i 
+c i a o 
+That's it!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'\nprint("-" * 20)\n\n# Nested loop with range (Creating a rectangle of stars)\nfor num in range(3):\n    print(f\'{num}:\', end=\' \')\n    for n in range(5):\n        print(\'*\', end=\'\')\n    print()\n'
+</pre></div>
+</div>
+</div>
+</div>
+<section id="varying-the-inner-loop">
+<h3>Varying the Inner Loop<a class="headerlink" href="#varying-the-inner-loop" title="Link to this heading">#</a></h3>
+<p>We can make the inner loop depend on the outer loop variable to create shapes (like triangles).</p>
+<p>We can also nest <code class="docutils literal notranslate"><span class="pre">while</span></code> loops inside <code class="docutils literal notranslate"><span class="pre">for</span></code> loops (e.g., asking for input 3 distinct times, with error checking for each).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Triangle Pattern:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">:'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'*'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Triangle Pattern:
+0: *
+1: **
+2: ***
+--------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nested For/While Loop (Input validation repeated 3 times)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Round </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">: Enter a positive number: '</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Please follow directions!'</span><span class="p">)</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Enter a positive number: '</span><span class="p">)</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for entering'</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Round 1: Enter a positive number: 5
+Thanks for entering 5.0
+
+Round 2: Enter a positive number: -2
+Please follow directions!
+Enter a positive number: 10
+Thanks for entering 10.0
+
+Round 3: Enter a positive number: -1
+Please follow directions!
+Enter a positive number: -3
+Please follow directions!
+Enter a positive number: 7
+Thanks for entering 7.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="using-if-inside-a-loop">
+<h2>Using if Inside a Loop<a class="headerlink" href="#using-if-inside-a-loop" title="Link to this heading">#</a></h2>
+<p>In practice, we often want the action to change depending on the current value of the loop variable.</p>
+</section>
+<section id="randomness-and-reproducibility">
+<h2>Randomness and Reproducibility<a class="headerlink" href="#randomness-and-reproducibility" title="Link to this heading">#</a></h2>
+<p>In engineering, results must be repeatable.</p>
+<ul class="simple">
+<li><p><strong>Pseudo-random numbers</strong>: Generated by a mathematical formula.</p></li>
+<li><p><strong>Seed</strong>: A starting point for the formula. If you set the seed, you get the same random numbers every time.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using IF inside a LOOP (Even/Odd check)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Even/Odd Check:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">"is even"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">"is odd"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+      <span class="k">break</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">"is even"</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">"is odd"</span><span class="p">)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Randomness and Reproducibility</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Set seed</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Run 1 (Seed 42):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+<span class="c1"># Resetting seed to show reproducibility</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Run 2 (Seed 42 again):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span> <span class="c1"># Will match the first number above</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span> <span class="c1"># Will match the second number above</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Even/Odd Check:
+0 is even
+0 is even
+1 is odd
+2 is even
+--------------------
+Run 1 (Seed 42):
+82
+15
+Run 2 (Seed 42 again):
+82
+15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./discussions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Week3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Week 3 Discussion: Booleans and Selection Statements</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Week5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ENG EK 125 – Exam 1 Review</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Discussion Week 4 Modules - Loops - Nested Loops</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#class-5-importing-modules-and-basic-loops">Class 5: Importing Modules and Basic Loops</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-importing-modules">Part 1: Importing Modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-module">What is a Module?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-import-basic-syntax">How to Import: Basic Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-import-the-entire-module">Method 2: Import the Entire Module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-import-with-an-alias-nickname">Method 3: Import with an Alias (Nickname)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-module">The random Module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-math-module">The math Module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-for-loops">Part 2: For Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-using-range">Loops using <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-sequences">Looping through sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-running-sums">Calculating Running Sums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-loops-with-random-numbers">Combining Loops with Random Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-conditional-loops-while">Part 3: Conditional Loops (While)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-checking">Error Checking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-in-a-while-loop">Counting in a while loop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-loops">Nested Loops</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Nested loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-the-inner-loop">Varying the Inner Loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-if-inside-a-loop">Using if Inside a Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness-and-reproducibility">Randomness and Reproducibility</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Stormy Attaway, Brian DePasquale, Christine Mulvey, Kenn Sebesta
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
