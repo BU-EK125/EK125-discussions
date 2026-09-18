@@ -1,0 +1,8 @@
+format: jb-book
+root: intro
+chapters:
+  - file: discussions/Week2
+  - file: discussions/Week3
+  - file: discussions/Week4
+  - file: discussions/Week5
+  - file: discussions/Week9

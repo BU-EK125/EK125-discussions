@@ -1,0 +1,7 @@
+**/.idea/
+.DS_Store
+_build/
+.claude/
+
+# Created by Week9.ipynb's file-I/O demo when the notebook executes
+discussions/example_file.txt
